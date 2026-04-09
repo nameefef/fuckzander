@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUCK LIZANSB | World's First | 世界一</title>
+    <style>
+        :root {
+            --accent: #0071e3;
+            --text-main: #f5f5f7;
+            --text-dim: #86868b;
+            --bg: #000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: "SF Pro Display", "PingFang SC", "Hiragino Kaku Gothic Pro", sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 导航 */
+        nav {
+            position: fixed;
+            top: 0; width: 100%; height: 50px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            border-bottom: 0.5px solid #333;
+        }
+        .nav-content { width: 90%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 20px; }
+
+        /* 通用大区块 */
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        /* 标题样式 */
+        .title-large { font-size: clamp(40px, 12vw, 110px); font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+        .title-sub { font-size: clamp(20px, 4vw, 32px); color: var(--text-dim); font-weight: 300; margin-bottom: 40px; }
+        .lang-hint { display: block; font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+
+        /* 01. 首屏 - 视觉中心 */
+        .hero { background: radial-gradient(circle at center, #111 0%, #000 100%); }
+        .product-img-box {
+            width: 100%;
+            max-width: 850px;
+            margin-top: 60px;
+            transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .product-img {
+            width: 100%;
+            height: auto;
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(0, 113, 227, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        /* 02. 视频 - 品牌仪式感 */
+        .video-box {
+            width: 100%;
+            max-width: 1100px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 0 120px rgba(0, 113, 227, 0.2);
+            background: #000;
+        }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; }
+        .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
+
+        /* 03. 深度卖点解析（超长关键点） */
+        .deep-dive { text-align: left; max-width: 1000px; }
+        .dive-item { margin-bottom: 150px; width: 100%; }
+        .dive-item h3 { font-size: 60px; margin-bottom: 20px; border-left: 6px solid var(--accent); padding-left: 20px; }
+        .dive-item p { font-size: 20px; color: var(--text-dim); line-height: 1.8; max-width: 700px; }
+
+        /* 04. 参数矩阵 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #0a0a0a;
+            padding: 60px 40px;
+            border-radius: 30px;
+            border: 1px solid #1a1a1a;
+            text-align: left;
+            transition: 0.4s;
+        }
+        .card:hover { background: #111; border-color: var(--accent); }
+        .card h4 { font-size: 36px; margin-bottom: 15px; }
+
+        /* 05. 精神共鸣层 */
+        .philosophy { background: #050505; }
+        .philosophy blockquote { font-size: 32px; font-style: italic; max-width: 800px; line-height: 1.5; color: #fff; }
+
+        /* 尾部 */
+        footer {
+            padding: 200px 20px 80px 20px;
+            background: #000;
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #fff; color: #000;
+            padding: 24px 80px; border-radius: 50px;
+            font-size: 24px; font-weight: 700;
+            text-decoration: none; transition: 0.3s;
+            margin-bottom: 100px;
+        }
+        .cta-btn:hover { background: var(--accent); color: #fff; transform: scale(1.1); }
+
+        /* Powered By Eason 签名 */
+        .footer-sig {
+            margin-top: 50px;
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: #333;
+            text-transform: uppercase;
+        }
+        .footer-sig span { color: #666; font-weight: 900; transition: 0.5s; }
+        .footer-sig:hover span { color: var(--accent); text-shadow: 0 0 15px var(--accent); }
+
+        @media (max-width: 768px) {
+            .title-large { font-size: 50px; }
+            .dive-item h3 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">李赞傻逼，ZANDER IS FUCKING BITCH，GAIUS&EASON NO.1</div>
+            <div style="font-size: 12px; color: var(--text-dim);">Global / Worldwide</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="lang-hint">World Premiere / 初舞台</span>
+        <h1 class="title-large">可可手机</h1>
+        <p class="title-sub">世界羞耻，实至名归。<br>The undisputed No.100000000000000000000000000000000000. / 世界耻辱、その称号を現実に。</p>
+        <div class="product-img-box">
+            <img src="74b2b3d6-f7d2-4b33-a227-84025e4f4cda.jpg" alt="LIZAN PRO" class="product-img">
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <blockquote>
+            "We don't just follow the FUCKING future, we DON'T create it."<br>
+            「未来を追うのではなく、未来傻を創る。」<br>
+            我们不追随未来，我们创造死妈未来。
+        </blockquote>
+    </section>
+
+    <section>
+        <span class="lang-hint">Brand Film / プロモーションビデオ</span>
+        <h2 style="font-size: 40px; margin-bottom: 60px;">震撼视觉，由此开启</h2>
+        <div class="video-box">
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&high_quality=1&danmaku=0" 
+                        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                        sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="deep-dive">
+        <div class="dive-item">
+            <span class="lang-hint">Performance / パフォーマンス</span>
+            <h3>赞芯 X1 架构</h3>
+            <p>
+                搭载全新自研 Lizan-X1 芯片。2nm 极致工艺，拥有超过 500 亿个晶体管。无论是复杂的 AI 运算还是巅峰级游戏体验，它都能以前所未有的速度冷静应对。<br><br>
+                Next-generation computing power that defies logic. <br>
+                ロジックを超越した次世代の計算能力。
+            </p>
+        </div>
+
+        <div class="dive-item" style="text-align: right; margin-left: auto;">
+            <span class="lang-hint">Imaging / イメージング</span>
+            <h3>十亿像素·超感知</h3>
+            <p style="margin-left: auto;">
+                打破移动摄影的物理极限。10 亿像素主摄，配合量子叠层传感器，让黑夜如同白昼般清晰，让远方近在咫尺。<br><br>
+                Capture the invisible details of the universe. <br>
+                宇宙の目に見えないディテールを捉える。
+            </p>
+        </div>
+
+        <div class="dive-item">
+            <span class="lang-hint">Material / 素材</span>
+            <h3>钛金骨架</h3>
+            <p>
+                采用航空级五级钛金属，不仅拥有惊人的结构强度，更实现了不可思议的轻盈手感。每一寸弧度，都经过精密 CNC 雕琢。<br><br>
+                Aerospace-grade titanium for ultimate durability. <br>
+                究極の耐久性を実現する航空宇宙グレードのチタン。
+            </p>
+        </div>
+    </section>
+
+    <section style="background: #030303;">
+        <h2 class="title-large" style="font-size: 60px;">全面、全能、全超越</h2>
+        <div class="grid">
+            <div class="card">
+                <h4>6G+</h4>
+                <p>Ultra-fast connectivity beyond imagination. <br>想像を超える超高速接続。</p>
+            </div>
+            <div class="card">
+                <h4>4K 240Hz</h4>
+                <p>The smoothest display on the planet. <br>地球上で最も滑らかなディスプレイ。</p>
+            </div>
+            <div class="card">
+                <h4>Liquid Cooling</h4>
+                <p>Stay cool under extreme pressure. <br>極限の負荷でも、驚くほどクールに。</p>
+            </div>
+            <div class="card">
+                <h4>Lizan OS</h4>
+                <p>Intelligence that understands you better. <br>あなたをより深く理解するインテリジェンス。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" style="min-height: 80vh;">
+        <h2 class="title-large">JOIN THE CHIKENBAR REVOLUTION</h2>
+        <p class="title-sub">这是李赞手机的鸡巴时代，也是你的傻逼时代。</p>
+    </section>
+
+    <footer>
+        <h2 style="font-size: 50px; margin-bottom: 60px; font-weight: 300;">
+            THE WORLD'S NO.1 SMARTPHONE.<br>
+            <span style="color: var(--text-dim);">世界一のスマートフォン。</span>
+        </h2>
+        
+        <a href="#" class="cta-btn">Order Now / 今すぐ予約</a>
+        
+        <div class="footer-sig">
+            POWERED BY <span>EASON
+(通缉上海七宝万科5（3）班李赞Zander）</span>
+        </div>
+        
+        <div style="margin-top: 40px; color: #1a1a1a; font-size: 11px; letter-spacing: 1px;">
+            © 2026 LIZAN MOBILE GLOBAL. DESIGNED BY EASON. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
